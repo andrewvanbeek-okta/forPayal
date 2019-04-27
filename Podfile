@@ -7,4 +7,7 @@ target 'Eureka Article' do
 
   # Pods for Eureka Article
   pod 'Eureka'
+pod 'OktaJWT'
+pod 'OktaOidc'
+pod 'SCLAlertView'	
 end

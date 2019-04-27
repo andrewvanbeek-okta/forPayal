@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		63D43E83018EAAEF8C229549 /* Pods_Eureka_Article.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD429DF341A3E29AEBABD997 /* Pods_Eureka_Article.framework */; };
+		9348A2F02273A65D0075C7C5 /* authController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9348A2EF2273A65D0075C7C5 /* authController.swift */; };
+		9348A2F22273C20C0075C7C5 /* userImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9348A2F12273C20C0075C7C5 /* userImage.png */; };
+		9348A2F4227477E60075C7C5 /* Wiretap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9348A2F3227477E60075C7C5 /* Wiretap.jpg */; };
 		C304A316203A161300DF6461 /* EurekaSelectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304A315203A161300DF6461 /* EurekaSelectionsViewController.swift */; };
 		C3212595203ABD1E00FAB8BE /* EurekaCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3212594203ABD1E00FAB8BE /* EurekaCustomViewController.swift */; };
 		C3212599203ABE9A00FAB8BE /* StringLengthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3212598203ABE9A00FAB8BE /* StringLengthCell.swift */; };
@@ -22,6 +25,10 @@
 /* Begin PBXFileReference section */
 		5E7D1D925674C54FF2321080 /* Pods-Eureka Article.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eureka Article.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eureka Article/Pods-Eureka Article.release.xcconfig"; sourceTree = "<group>"; };
 		6D85B787875F718E2C7137C5 /* Pods-Eureka Article.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eureka Article.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eureka Article/Pods-Eureka Article.debug.xcconfig"; sourceTree = "<group>"; };
+		9348A2EC227352050075C7C5 /* Eureka Article.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Eureka Article.entitlements"; sourceTree = "<group>"; };
+		9348A2EF2273A65D0075C7C5 /* authController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authController.swift; sourceTree = "<group>"; };
+		9348A2F12273C20C0075C7C5 /* userImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage.png; sourceTree = "<group>"; };
+		9348A2F3227477E60075C7C5 /* Wiretap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wiretap.jpg; sourceTree = SOURCE_ROOT; };
 		BD429DF341A3E29AEBABD997 /* Pods_Eureka_Article.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eureka_Article.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C304A315203A161300DF6461 /* EurekaSelectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaSelectionsViewController.swift; sourceTree = "<group>"; };
 		C3212594203ABD1E00FAB8BE /* EurekaCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaCustomViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +93,7 @@
 		C3AE361C2032E94B002A16DF /* Eureka Article */ = {
 			isa = PBXGroup;
 			children = (
+				9348A2EC227352050075C7C5 /* Eureka Article.entitlements */,
 				C3212597203ABE8200FAB8BE /* Custom Cells */,
 				C3AE361D2032E94B002A16DF /* AppDelegate.swift */,
 				C3AE36212032E94B002A16DF /* Main.storyboard */,
@@ -95,6 +103,9 @@
 				C36E577520334ED100E9339C /* EurekaSimpleViewController.swift */,
 				C304A315203A161300DF6461 /* EurekaSelectionsViewController.swift */,
 				C3212594203ABD1E00FAB8BE /* EurekaCustomViewController.swift */,
+				9348A2EF2273A65D0075C7C5 /* authController.swift */,
+				9348A2F12273C20C0075C7C5 /* userImage.png */,
+				9348A2F3227477E60075C7C5 /* Wiretap.jpg */,
 			);
 			path = "Eureka Article";
 			sourceTree = "<group>";
@@ -143,6 +154,11 @@
 					C3AE36192032E94B002A16DF = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -169,8 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9348A2F4227477E60075C7C5 /* Wiretap.jpg in Resources */,
 				C3AE36282032E94B002A16DF /* LaunchScreen.storyboard in Resources */,
 				C3AE36252032E94B002A16DF /* Assets.xcassets in Resources */,
+				9348A2F22273C20C0075C7C5 /* userImage.png in Resources */,
 				C321259B203AC37000FAB8BE /* StringLengthCell.xib in Resources */,
 				C3AE36232032E94B002A16DF /* Main.storyboard in Resources */,
 			);
@@ -185,7 +203,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Eureka Article/Pods-Eureka Article-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Eureka Article/Pods-Eureka Article-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -194,7 +212,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eureka Article/Pods-Eureka Article-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eureka Article/Pods-Eureka Article-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9CBF18A4719749FF9F4B3EE6 /* [CP] Check Pods Manifest.lock */ = {
@@ -223,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3212595203ABD1E00FAB8BE /* EurekaCustomViewController.swift in Sources */,
+				9348A2F02273A65D0075C7C5 /* authController.swift in Sources */,
 				C36E577620334ED100E9339C /* EurekaSimpleViewController.swift in Sources */,
 				C3AE361E2032E94B002A16DF /* AppDelegate.swift in Sources */,
 				C3212599203ABE9A00FAB8BE /* StringLengthCell.swift in Sources */,
@@ -364,11 +383,12 @@
 			baseConfigurationReference = 6D85B787875F718E2C7137C5 /* Pods-Eureka Article.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Eureka Article/Eureka Article.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 74JL49Z2D8;
+				DEVELOPMENT_TEAM = RJ2SYXWQS9;
 				INFOPLIST_FILE = "Eureka Article/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.inloop.Eureka-Article";
+				PRODUCT_BUNDLE_IDENTIFIER = avbTeleAppTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,11 +400,12 @@
 			baseConfigurationReference = 5E7D1D925674C54FF2321080 /* Pods-Eureka Article.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Eureka Article/Eureka Article.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 74JL49Z2D8;
+				DEVELOPMENT_TEAM = RJ2SYXWQS9;
 				INFOPLIST_FILE = "Eureka Article/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.inloop.Eureka-Article";
+				PRODUCT_BUNDLE_IDENTIFIER = avbTeleAppTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

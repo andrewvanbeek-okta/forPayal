@@ -1,16 +1,28 @@
 PODS:
   - Eureka (4.2.0)
+  - OktaJWT (2.0.0)
+  - OktaOidc (3.1.0)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - Eureka
+  - OktaJWT
+  - OktaOidc
+  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Eureka
+    - OktaJWT
+    - OktaOidc
+    - SCLAlertView
 
 SPEC CHECKSUMS:
   Eureka: 0748c7bbb2560130e43c7bfa83e99c98854a1f42
+  OktaJWT: 788c8311e4be6315a1b0e42ed4f22d204f1659cb
+  OktaOidc: 0f0d9fd66b58de596d216ce3bdae4e1984d11129
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: c30bd0915ab7423019c608c9a5c608d87b4f71be
+PODFILE CHECKSUM: a1d02241ac960a1ebdba50d616a61283906fe011
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.3
