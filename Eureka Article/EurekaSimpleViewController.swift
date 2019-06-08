@@ -9,6 +9,9 @@
 import UIKit
 import Eureka
 import OktaOidc
+import LocalAuthentication
+import KeychainAccess
+import SwiftyJSON
 
 class EurekaSimpleViewController: FormViewController {
     
@@ -25,105 +28,149 @@ class EurekaSimpleViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var config = {
-            return try! OktaOidcConfig(with: [
-                "issuer": "https://movistar.vanbeeklabs.com/oauth2/default",
-                "clientId": "0oahygjhxDYVr9LNc356",
-                "redirectUri": "com.okta.dev-801790:/callback",
-                "logoutRedirectUri": "com.okta.dev-801790:/callback",
-                "scopes": "openid profile email offline_access"
-                ])
-        }()
-        
-        var oktaOidc = {
+        let keychain = self.getKeyChain()
+        print(keychain["faceid"] as Any)
+        let config = self.getConfig()
+        let oktaOidc = {
             return try! OktaOidc(configuration: config)
         }()
-        
         guard let stateManager = OktaOidcStateManager.readFromSecureStorage(for: config) else {
             // unauthenticated
             return
         }
-        
-        form +++ Section("About You") {section in
-            var header = HeaderFooterView<UIView>(.class)
-            header.height = {300}
-            header.onSetupView = { view, _ in
-                view.backgroundColor = .red
-                view.backgroundColor = UIColor(patternImage: UIImage(named: "userImage.png")!)
-            }
-            section.header = header
-            }
-            +++ Section("YOU")
-            <<< TextRow(FormItems.name) { row in
-                row.placeholder = "Your Name"
-            }
-            <<< TextRow(FormItems.firstname) { row in
-                row.placeholder = "firstname"
-            }
-            <<< TextRow(FormItems.lastname) { row in
-                row.placeholder = "lastname"
-            }
-            <<< TextRow(FormItems.email) { row in
-                row.placeholder = "email"
-                }.cellUpdate { cell, row in
-                    print("RUNS")
-                    //self.dismiss(animated: false, completion: nil)
-            } <<< ButtonRow(){
-                $0.title = "Sign Out"
-                }.onCellSelection {  cell, row in
-                    oktaOidc.signOutOfOkta(stateManager, from: self) { error in
-                        if let error = error {
-                            return
-                        }
-                        stateManager.clear()
-                        print("gets here")
-                        self.performSegue(withIdentifier: "signOut", sender: nil)
-                    }
-        }
-        
-        
-        
-        
-        print(stateManager.accessToken)
-        print(stateManager.idToken)
-        print(stateManager.refreshToken)
         stateManager.getUser { response, error in
-            if let error = error {
+            if error != nil {
                 // Error
                 return
             }
-            
-            print(response)
-            
-            
-            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-            loadingIndicator.hidesWhenStopped = true
-            loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorView.Style.gray
-            loadingIndicator.startAnimating();
-            
-            self.alert.view.addSubview(loadingIndicator)
-            self.alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            self.present(self.alert, animated: true, completion: nil)
-            
-            if let nameRow = self.form.rowBy(tag: FormItems.name) as? RowOf<String>,
-                let firstnameRow = self.form.rowBy(tag: FormItems.firstname) as? RowOf<String>,
-                let lastnameRow = self.form.rowBy(tag: FormItems.lastname) as? RowOf<String>,
-                let emailRow = self.form.rowBy(tag: FormItems.email) as? RowOf<String>
-            {
-                nameRow.value = response!["name"] as! String
-                firstnameRow.value = response!["given_name"] as! String
-                lastnameRow.value = response!["family_name"] as! String
-                emailRow.value = response!["preferred_username"] as! String
-                print(response!["name"])
-                nameRow.updateCell()
-                firstnameRow.updateCell()
-                lastnameRow.updateCell()
-                emailRow.updateCell()
-                
+            print(response as Any)
+            DispatchQueue.main.async {
+                let responseObject = JSON(response)
+                var userInfo = responseObject.dictionaryValue
+                let keys = Array(userInfo.keys)
+                let section = Section()
+                var header = HeaderFooterView<UIView>(.class)
+                header.height = {300}
+                header.onSetupView = { view, _ in
+                    let width = view.frame.width
+                    let height = view.frame.height
+                    let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+                    imageViewBackground.image = UIImage(named: "rogersuser.png")
+                    imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
+                    view.addSubview(imageViewBackground)
+                    view.sendSubview(toBack: imageViewBackground)
+                }
+                section.header = header
+                self.form +++
+                section
+                keys.forEach { item in
+                    section <<< TextRow(item) {
+                        $0.title = item
+                        $0.value = userInfo[item]?.rawString()
+                    }
+                }
+                section <<< SwitchRow("SwitchRow") { row in      // initializer
+                    row.title = "Face Id"
+                    if(keychain["faceid"] != nil) {
+                        row.value = true
+                    }
+                    }.onChange { row in
+                        row.title = (row.value ?? false) ? "faceid is on" : "faceid is off"
+                        if(row.value!) {
+                            keychain["faceid"] = "true"
+                            print(keychain["faceid"] as Any)
+                        } else {
+                            keychain["faceid"] = nil
+                            print(keychain["faceid"] as Any)
+                        }
+                        row.updateCell()
+                }
+                section <<< ButtonRow() {
+                    $0.title = "refresh"
+                    }.onCellSelection {cell, row in
+                        self.refresh(form: self.form, stateManger: stateManager)
+                }
+                section <<< ButtonRow() {
+                    $0.title = "Sign Out"
+                    }.onCellSelection {  cell, row in
+                        
+                        let keychain = self.getKeyChain()
+                        let isNative = keychain[string: "native"]
+                        if(isNative != nil) {
+                            self.performSegue(withIdentifier: "signOutFlow", sender: nil)
+                        } else {
+                            oktaOidc.signOutOfOkta(stateManager, from: self) { error in
+                                if let error = error {
+                                    print(error)
+                                    return
+                                }
+                                print("GETS Here")
+                                keychain["native"] = nil
+                                DispatchQueue.main.async {
+                                    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                    if(keychain["faceid"] == nil) {
+                                        stateManager.clear()
+                                    }
+                                    if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainVc") as? UIViewController {
+                                        self.present(viewController, animated: true, completion: nil)
+                                    }
+                                }
+                            }
+                        }
+                }
             }
-            
         }
-        
     }
     
+    func refresh(form: Form, stateManger: OktaOidcStateManager) {
+        stateManger.getUser { response, error in
+            if error != nil {
+                // Error
+                return
+            }
+            if(stateManger != nil) {
+                if(stateManger.accessToken != nil) {
+                    DispatchQueue.main.async {
+                        let responseObject = JSON(response as Any)
+                        var userInfo = responseObject.dictionaryValue
+                        let keys = Array(userInfo.keys)
+                        print(responseObject)
+                        keys.forEach { item in
+                            let row = form.rowBy(tag: item) as! TextRow
+                            row.value = userInfo[item]?.rawString()
+                            row.reload()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getOkta() -> OktaOidc {
+        let config = self.getConfig()
+        let oktaOidc = {
+            return try! OktaOidc(configuration: config)
+        }()
+        return oktaOidc
+    }
+}
+
+extension UIViewController {
+    
+    func getKeyChain() -> Keychain {
+        return Keychain(service: "com.avbGame.TwelveTest")
+    }
+    
+    func getConfig() -> OktaOidcConfig {
+        let config = {
+            return try! OktaOidcConfig(with: [
+                "issuer": "https://pocrogers.okta.com/oauth2/default",
+                "clientId": "0oanctypwoJ1xupFd356",
+                "redirectUri": "com.okta.pocrogers:/callback",
+                "logoutRedirectUri": "com.okta.pocrogers:/callback",
+                "scopes": "openid profile offline_access"
+                ])
+        }()
+        return config
+    }
 }

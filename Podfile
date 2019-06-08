@@ -9,5 +9,7 @@ target 'Eureka Article' do
   pod 'Eureka'
 pod 'OktaJWT'
 pod 'OktaOidc'
-pod 'SCLAlertView'	
+pod 'KeychainAccess', '~> 3.2'
+pod 'SCLAlertView'
+pod 'SwiftyJSON', '~> 4.1.0'	
 end

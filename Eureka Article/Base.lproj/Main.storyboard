@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4er-BL-Un4">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,38 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Simple-->
-        <scene sceneID="sVR-Cx-Iyr">
-            <objects>
-                <viewController id="bEG-vm-tNV" customClass="EurekaSimpleViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fnk-bW-2Nt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="aTJ-65-oET"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Simple" id="b5R-Sb-6oC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8C-EN-ckV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2942" y="-475"/>
-        </scene>
         <!--Auth View Controller-->
         <scene sceneID="vt4-WM-1De">
             <objects>
-                <viewController id="4er-BL-Un4" customClass="AuthViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVc" id="4er-BL-Un4" customClass="AuthViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRo-9o-RgZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Wiretap.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VqL-ue-zQl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="839"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URN-4S-fop">
-                                <rect key="frame" x="83" y="605" width="209" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URN-4S-fop">
+                                <rect key="frame" x="101.5" y="736" width="209" height="30"/>
+                                <color key="backgroundColor" red="0.95280390979999996" green="0.2055484719" blue="0.21746585970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -49,25 +29,56 @@
                                     <action selector="login:" destination="4er-BL-Un4" eventType="touchUpInside" id="8Ou-LB-jbW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRk-OT-tdk">
+                                <rect key="frame" x="101" y="781" width="210" height="30"/>
+                                <color key="backgroundColor" red="0.95280390979999996" green="0.2055484719" blue="0.21746585970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="QQg-zI-AUH"/>
+                                    <constraint firstAttribute="height" constant="30" id="VCz-6Q-qVF"/>
+                                    <constraint firstAttribute="width" secondItem="KRk-OT-tdk" secondAttribute="height" multiplier="7:1" id="ZK6-31-fdl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="FaceId">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="faceId:" destination="4er-BL-Un4" eventType="touchUpInside" id="Wtz-ht-RbX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rogerslogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-49-xGB">
+                                <rect key="frame" x="41" y="254" width="332" height="292"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Tp8-oA-tSt" firstAttribute="trailing" secondItem="URN-4S-fop" secondAttribute="trailing" constant="103.33" id="2Ze-ay-m9I"/>
+                            <constraint firstItem="FJD-49-xGB" firstAttribute="centerX" secondItem="Tp8-oA-tSt" secondAttribute="centerX" id="71u-gi-ecg"/>
+                            <constraint firstItem="FJD-49-xGB" firstAttribute="centerY" secondItem="Tp8-oA-tSt" secondAttribute="centerY" multiplier="0.8" id="9K2-Os-uWN"/>
+                            <constraint firstItem="KRk-OT-tdk" firstAttribute="leading" secondItem="Tp8-oA-tSt" secondAttribute="leading" constant="101" id="Fat-tA-3Ca"/>
+                            <constraint firstItem="Tp8-oA-tSt" firstAttribute="trailing" secondItem="KRk-OT-tdk" secondAttribute="trailing" constant="103" id="PB4-bo-mYF"/>
+                            <constraint firstItem="KRk-OT-tdk" firstAttribute="top" secondItem="URN-4S-fop" secondAttribute="bottom" constant="15" id="QrU-tl-MVA"/>
+                            <constraint firstItem="URN-4S-fop" firstAttribute="leading" secondItem="Tp8-oA-tSt" secondAttribute="leading" constant="101.67" id="bRW-e1-j71"/>
+                            <constraint firstItem="Tp8-oA-tSt" firstAttribute="bottom" secondItem="KRk-OT-tdk" secondAttribute="bottom" constant="51" id="hTU-K4-AcI"/>
+                            <constraint firstItem="Tp8-oA-tSt" firstAttribute="bottom" secondItem="URN-4S-fop" secondAttribute="bottom" constant="96" id="m8h-Pc-1vs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tp8-oA-tSt"/>
                     </view>
                     <connections>
+                        <outlet property="faceIdButton" destination="KRk-OT-tdk" id="FCA-rU-3BE"/>
                         <outlet property="signIn" destination="URN-4S-fop" id="05m-RX-Xan"/>
                         <segue destination="8QA-oV-rB6" kind="showDetail" identifier="signIn" id="pYm-Dt-w6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beh-N9-jrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2935" y="44"/>
+            <point key="canvasLocation" x="-2936.2318840579715" y="43.526785714285715"/>
         </scene>
-        <!--Eureka Simple View Controller-->
+        <!--userDashBoard-->
         <scene sceneID="gcg-H2-E2v">
             <objects>
-                <viewController id="8QA-oV-rB6" customClass="EurekaSimpleViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userDashBoard" title="userDashBoard" id="8QA-oV-rB6" customClass="EurekaSimpleViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0D-gk-g7u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Uco-33-94Z"/>
@@ -80,116 +91,8 @@
             </objects>
             <point key="canvasLocation" x="-1174" y="10"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="NZL-JT-m1P">
-            <objects>
-                <tabBarController id="ktj-rJ-DwC" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lfh-oM-Bm6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="uoV-HJ-OMU" kind="relationship" relationship="viewControllers" id="Ips-sW-hec"/>
-                        <segue destination="iFn-EB-lg3" kind="relationship" relationship="viewControllers" id="dWT-ff-XXz"/>
-                        <segue destination="cwf-7N-Sxn" kind="relationship" relationship="viewControllers" id="rsL-pL-y8g"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gva-fZ-xXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="15" y="356"/>
-        </scene>
-        <!--Simple-->
-        <scene sceneID="uf1-CL-hWQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uoV-HJ-OMU" customClass="signOut" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Simple" id="Lf5-20-T1j"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7M-GT-CxX">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bEG-vm-tNV" kind="relationship" relationship="rootViewController" id="f15-Ut-GTf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kQX-aa-74K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2137" y="-475"/>
-        </scene>
-        <!--Selections-->
-        <scene sceneID="aQL-vE-3Xg">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFn-EB-lg3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Selections" id="smm-37-Rdw"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rm9-sK-ZqO">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9g9-fF-fxC" kind="relationship" relationship="rootViewController" id="OIZ-Hu-4kj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5b5-fD-Wn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2137" y="224"/>
-        </scene>
-        <!--Selections-->
-        <scene sceneID="4ZY-da-5f9">
-            <objects>
-                <viewController id="9g9-fF-fxC" customClass="EurekaSelectionsViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1h5-Su-a7p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Hxa-kX-zPj"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Selections" id="O22-Bn-exz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hg4-d5-SKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2942" y="224"/>
-        </scene>
-        <!--Style-->
-        <scene sceneID="75g-qt-105">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwf-7N-Sxn" userLabel="Style" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Custom" id="1DE-C3-1aP"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Bg-uP-Qf8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hLQ-EW-PIx" kind="relationship" relationship="rootViewController" id="IxK-kC-nft"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XQu-yP-ivm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2137" y="933"/>
-        </scene>
-        <!--Custom-->
-        <scene sceneID="pn8-KA-D0w">
-            <objects>
-                <viewController id="hLQ-EW-PIx" customClass="EurekaCustomViewController" customModule="Eureka_Article" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UB3-YU-pb0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="BRj-BA-8Ar"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Custom" id="85d-c4-cS2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GF1-ev-quS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2942" y="932"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Wiretap.jpg" width="1920" height="1080"/>
+        <image name="rogerslogo.png" width="400" height="400"/>
     </resources>
 </document>
