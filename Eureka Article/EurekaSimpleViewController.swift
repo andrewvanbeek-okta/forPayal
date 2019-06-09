@@ -1,9 +1,7 @@
+
 //
-//  EurekaSimpleViewController.swift
-//  Eureka Article
-//
-//  Created by Tomáš Srna on 13/02/2018.
-//  Copyright © 2018 Inloop. All rights reserved.
+//  Created by Andrew Vanbeek 
+//  Copyright © 2019 Andrew Vanbeek. All rights reserved.
 //
 
 import UIKit
