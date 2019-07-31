@@ -53,7 +53,7 @@ class EurekaSimpleViewController: FormViewController {
                     let width = view.frame.width
                     let height = view.frame.height
                     let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-                    imageViewBackground.image = UIImage(named: "rogersuser.png")
+                    imageViewBackground.image = UIImage(named: "vanbeeklabsforaws.png")
                     imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
                     view.addSubview(imageViewBackground)
                     view.sendSubview(toBack: imageViewBackground)
@@ -160,12 +160,12 @@ extension UIViewController {
     }
     
     func getConfig() -> OktaOidcConfig {
-        let config = {
+        var config = {
             return try! OktaOidcConfig(with: [
-                "issuer": "https://pocrogers.okta.com/oauth2/default",
-                "clientId": "0oanctypwoJ1xupFd356",
-                "redirectUri": "com.okta.pocrogers:/callback",
-                "logoutRedirectUri": "com.okta.pocrogers:/callback",
+                "issuer": "https://avb.oktapreview.com/oauth2/auskkfitx0l6SNY6R0h7",
+                "clientId": "0oakkch04alb3cucj0h7",
+                "redirectUri": "com.oktapreview.avb:/callback",
+                "logoutRedirectUri": "com.oktapreview.avb:/callback",
                 "scopes": "openid profile offline_access"
                 ])
         }()

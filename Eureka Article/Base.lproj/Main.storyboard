@@ -45,8 +45,12 @@
                                     <action selector="faceId:" destination="4er-BL-Un4" eventType="touchUpInside" id="Wtz-ht-RbX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rogerslogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-49-xGB">
-                                <rect key="frame" x="41" y="254" width="332" height="292"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vanbeeklabsforaws.png" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-49-xGB">
+                                <rect key="frame" x="41" y="216.5" width="332" height="292"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="292" id="VOg-pt-f6x"/>
+                                    <constraint firstAttribute="width" constant="332" id="eVJ-wM-yJe"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,6 +97,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rogerslogo.png" width="400" height="400"/>
+        <image name="vanbeeklabsforaws.png" width="1000" height="1000"/>
     </resources>
 </document>

@@ -71,6 +71,7 @@ class AuthViewController: UIViewController {
         guard let stateManager = OktaOidcStateManager.readFromSecureStorage(for: config) else {
             return
         }
+        
         if(keychain["faceid"] == nil) {
             print(stateManager.accessToken as Any)
             print(stateManager.idToken as Any)
