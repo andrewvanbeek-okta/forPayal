@@ -20,7 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URN-4S-fop">
                                 <rect key="frame" x="101.5" y="736" width="209" height="30"/>
-                                <color key="backgroundColor" red="0.95280390979999996" green="0.2055484719" blue="0.21746585970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,7 +31,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRk-OT-tdk">
                                 <rect key="frame" x="101" y="781" width="210" height="30"/>
-                                <color key="backgroundColor" red="0.95280390979999996" green="0.2055484719" blue="0.21746585970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="QQg-zI-AUH"/>
                                     <constraint firstAttribute="height" constant="30" id="VCz-6Q-qVF"/>
@@ -45,10 +45,10 @@
                                     <action selector="faceId:" destination="4er-BL-Un4" eventType="touchUpInside" id="Wtz-ht-RbX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vanbeeklabsforaws.png" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-49-xGB">
-                                <rect key="frame" x="41" y="216.5" width="332" height="292"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cetera(1).png" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-49-xGB">
+                                <rect key="frame" x="41" y="332" width="332" height="103"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="292" id="VOg-pt-f6x"/>
+                                    <constraint firstAttribute="height" constant="103" id="VOg-pt-f6x"/>
                                     <constraint firstAttribute="width" constant="332" id="eVJ-wM-yJe"/>
                                 </constraints>
                             </imageView>
@@ -57,7 +57,7 @@
                         <constraints>
                             <constraint firstItem="Tp8-oA-tSt" firstAttribute="trailing" secondItem="URN-4S-fop" secondAttribute="trailing" constant="103.33" id="2Ze-ay-m9I"/>
                             <constraint firstItem="FJD-49-xGB" firstAttribute="centerX" secondItem="Tp8-oA-tSt" secondAttribute="centerX" id="71u-gi-ecg"/>
-                            <constraint firstItem="FJD-49-xGB" firstAttribute="centerY" secondItem="Tp8-oA-tSt" secondAttribute="centerY" multiplier="0.8" id="9K2-Os-uWN"/>
+                            <constraint firstItem="FJD-49-xGB" firstAttribute="centerY" secondItem="Tp8-oA-tSt" secondAttribute="centerY" multiplier="0.8" constant="21.099999999999966" id="9K2-Os-uWN"/>
                             <constraint firstItem="KRk-OT-tdk" firstAttribute="leading" secondItem="Tp8-oA-tSt" secondAttribute="leading" constant="101" id="Fat-tA-3Ca"/>
                             <constraint firstItem="Tp8-oA-tSt" firstAttribute="trailing" secondItem="KRk-OT-tdk" secondAttribute="trailing" constant="103" id="PB4-bo-mYF"/>
                             <constraint firstItem="KRk-OT-tdk" firstAttribute="top" secondItem="URN-4S-fop" secondAttribute="bottom" constant="15" id="QrU-tl-MVA"/>
@@ -97,6 +97,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="vanbeeklabsforaws.png" width="1000" height="1000"/>
+        <image name="Cetera(1).png" width="1192" height="206"/>
     </resources>
 </document>

@@ -13,6 +13,10 @@
 		9348A2F4227477E60075C7C5 /* Wiretap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9348A2F3227477E60075C7C5 /* Wiretap.jpg */; };
 		93757A5522807B940056514A /* secondAppBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 93757A5422807B940056514A /* secondAppBg.png */; };
 		9393D10E22F20BE4000DFF77 /* vanbeeklabsforaws.png in Resources */ = {isa = PBXBuildFile; fileRef = 9393D10D22F20BE3000DFF77 /* vanbeeklabsforaws.png */; };
+		93C79CCE2302186D0087B1D4 /* cetera.svg in Resources */ = {isa = PBXBuildFile; fileRef = 93C79CCD2302186D0087B1D4 /* cetera.svg */; };
+		93C79CD0230218B80087B1D4 /* Cetera(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 93C79CCF230218B80087B1D4 /* Cetera(1).png */; };
+		93C79CD2230219D20087B1D4 /* hero_homepage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93C79CD1230219D20087B1D4 /* hero_homepage.jpg */; };
+		93C79CD423021B1E0087B1D4 /* meeting.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93C79CD323021B1E0087B1D4 /* meeting.jpg */; };
 		93E4778E22A3B0DA00FFB703 /* rogersbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93E4778D22A3B0DA00FFB703 /* rogersbg.jpg */; };
 		C3212599203ABE9A00FAB8BE /* StringLengthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3212598203ABE9A00FAB8BE /* StringLengthCell.swift */; };
 		C321259B203AC37000FAB8BE /* StringLengthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C321259A203AC37000FAB8BE /* StringLengthCell.xib */; };
@@ -32,6 +36,10 @@
 		9348A2F3227477E60075C7C5 /* Wiretap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wiretap.jpg; sourceTree = SOURCE_ROOT; };
 		93757A5422807B940056514A /* secondAppBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secondAppBg.png; sourceTree = SOURCE_ROOT; };
 		9393D10D22F20BE3000DFF77 /* vanbeeklabsforaws.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vanbeeklabsforaws.png; sourceTree = SOURCE_ROOT; };
+		93C79CCD2302186D0087B1D4 /* cetera.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cetera.svg; sourceTree = SOURCE_ROOT; };
+		93C79CCF230218B80087B1D4 /* Cetera(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cetera(1).png"; sourceTree = SOURCE_ROOT; };
+		93C79CD1230219D20087B1D4 /* hero_homepage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hero_homepage.jpg; sourceTree = SOURCE_ROOT; };
+		93C79CD323021B1E0087B1D4 /* meeting.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meeting.jpg; sourceTree = SOURCE_ROOT; };
 		93E4778D22A3B0DA00FFB703 /* rogersbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rogersbg.jpg; sourceTree = SOURCE_ROOT; };
 		BD429DF341A3E29AEBABD997 /* Pods_Eureka_Article.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eureka_Article.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3212598203ABE9A00FAB8BE /* StringLengthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLengthCell.swift; sourceTree = "<group>"; };
@@ -104,8 +112,12 @@
 				C3AE36292032E94B002A16DF /* Info.plist */,
 				C36E577520334ED100E9339C /* EurekaSimpleViewController.swift */,
 				9348A2EF2273A65D0075C7C5 /* authController.swift */,
+				93C79CCD2302186D0087B1D4 /* cetera.svg */,
+				93C79CCF230218B80087B1D4 /* Cetera(1).png */,
 				93757A5422807B940056514A /* secondAppBg.png */,
+				93C79CD323021B1E0087B1D4 /* meeting.jpg */,
 				93E4778D22A3B0DA00FFB703 /* rogersbg.jpg */,
+				93C79CD1230219D20087B1D4 /* hero_homepage.jpg */,
 				9348A2F12273C20C0075C7C5 /* userImage.png */,
 				9348A2F3227477E60075C7C5 /* Wiretap.jpg */,
 				9393D10D22F20BE3000DFF77 /* vanbeeklabsforaws.png */,
@@ -195,7 +207,11 @@
 				93757A5522807B940056514A /* secondAppBg.png in Resources */,
 				9348A2F22273C20C0075C7C5 /* userImage.png in Resources */,
 				9393D10E22F20BE4000DFF77 /* vanbeeklabsforaws.png in Resources */,
+				93C79CD2230219D20087B1D4 /* hero_homepage.jpg in Resources */,
+				93C79CD423021B1E0087B1D4 /* meeting.jpg in Resources */,
 				C321259B203AC37000FAB8BE /* StringLengthCell.xib in Resources */,
+				93C79CD0230218B80087B1D4 /* Cetera(1).png in Resources */,
+				93C79CCE2302186D0087B1D4 /* cetera.svg in Resources */,
 				C3AE36232032E94B002A16DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -53,7 +53,7 @@ class EurekaSimpleViewController: FormViewController {
                     let width = view.frame.width
                     let height = view.frame.height
                     let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-                    imageViewBackground.image = UIImage(named: "vanbeeklabsforaws.png")
+                    imageViewBackground.image = UIImage(named: "meeting.jpg")
                     imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
                     view.addSubview(imageViewBackground)
                     view.sendSubview(toBack: imageViewBackground)

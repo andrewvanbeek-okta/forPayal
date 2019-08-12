@@ -114,7 +114,7 @@ class AuthViewController: UIViewController {
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
         let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        imageViewBackground.image = (UIImage(named: "rogersbg.jpg"))
+        imageViewBackground.image = (UIImage(named: "meetinga.jpg"))
         imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.addSubview(imageViewBackground)
         self.view.sendSubview(toBack: imageViewBackground)
